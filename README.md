@@ -24,14 +24,6 @@ to natural language.
 - [Demo app](http://jkbrzt.github.io/rrule/)
 - # For contributors and maintainers: the code for the demo app is only on `gh-pages` branch
 
-#### Client Side
-
-```bash
-$ yarn add rrule
-```
-
-#### Server Side
-
 Includes optional TypeScript types
 
 ```bash

@@ -20,16 +20,16 @@
     "url": "git://github.com/jakubroztocil/rrule.git"
   },
   "scripts": {
-    "prebuild": "yarn clean",
-    "prepublish": "yarn build",
-    "build": "yarn lint && yarn format-check && tsc -b tsconfig.build.json && webpack && tsc dist/esm/**/*.d.ts",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "build": "npm run lint && npm run format-check && tsc -b tsconfig.build.json && webpack && tsc dist/esm/**/*.d.ts",
     "clean": "rm -rf dist/",
-    "lint": "yarn eslint . --fix --config .eslintrc.js",
-    "format": "yarn prettier --write .",
-    "format-check": "yarn prettier --check .",
+    "lint": "eslint . --fix --config .eslintrc.js",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "run-ts": "TS_NODE_PROJECT=tsconfig.json node --loader ts-node/esm",
     "test": "jest **/*.test.ts",
-    "test-ci": "yarn run-ts ./node_modules/.bin/nyc jest **/*.test.ts"
+    "test-ci": "npm run run-ts ./node_modules/.bin/nyc jest **/*.test.ts"
   },
   "nyc": {
     "extension": [
@@ -46,8 +46,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn lint",
-      "yarn format"
+      "npm run lint",
+      "npm run format"
     ]
   },
   "devDependencies": {
@@ -69,6 +69,7 @@
     "mockdate": "^3.0.5",
     "nyc": "^15.1.0",
     "prettier": "^2.6.2",
+    "rimraf": "^5.0.5",
     "source-map-loader": "^3.0.1",
     "source-map-support": "^0.5.16",
     "terser-webpack-plugin": "^5.3.3",
@@ -84,7 +85,6 @@
     "dist",
     "README.md"
   ],
-  "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.4.0"
   }
