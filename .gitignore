@@ -6,3 +6,8 @@ bower_components/
 coverage
 .nyc_output
 dist/
+
+# ignore lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
